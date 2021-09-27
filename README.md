@@ -39,12 +39,14 @@
 <p align="justify"><strong>PPT Setting</strong>: Due to the privacy concern, we propose the <strong>P</strong>rivacy-<strong>P</strong>reserving <strong>T</strong>raining (<strong>PPT</strong>) setting in portrait matting, 𝑖.𝑒., training on privacy-preserved images (𝑒.𝑔., processed by face obfuscation) and testing on arbitraty images with or without privacy content. As an initial step towards privacy-preserving portrait matting problem, we only define the <i>identifiable faces</i> in frontal and some profile portrait images as the private content in this work. </p>
 
 
-<p align="justify"><strong>P3M-10k Dataset</strong>: To further explore the effect of PPT setting, we establish the first large-scale privacy-preserving portrait matting benchmark named P3M-10k. It contains 10,000 annonymized high-resolution portrait images by face obfuscation along with high-quality ground truth alpha mattes. Specifically, we carefully collect, filter, and annotate about <strong>10,000</strong> high-resolution images from the Internet with free use license. There are <strong>9,421</strong> images in the training set and <strong>500</strong> images in the test set, denoted as <strong><i>P3M-500-P</i></strong>. In addition, we also collect and annotate another <strong>500</strong> public celebrity images from the Internet without face obfuscation, to evaluate the performance of matting models under the PPT setting on normal portrait images, denoted as <strong><i>P3M-500-NP</i></strong>. We show some examples as below. We will publish the whole dataset soon.</p>
+<p align="justify"><strong>P3M-10k Dataset</strong>: To further explore the effect of PPT setting, we establish the first large-scale privacy-preserving portrait matting benchmark named P3M-10k. It contains 10,000 annonymized high-resolution portrait images by face obfuscation along with high-quality ground truth alpha mattes. Specifically, we carefully collect, filter, and annotate about <strong>10,000</strong> high-resolution images from the Internet with free use license. There are <strong>9,421</strong> images in the training set and <strong>500</strong> images in the test set, denoted as <strong><i>P3M-500-P</i></strong>. In addition, we also collect and annotate another <strong>500</strong> public celebrity images from the Internet without face obfuscation, to evaluate the performance of matting models under the PPT setting on normal portrait images, denoted as <strong><i>P3M-500-NP</i></strong>. We show some examples as below, where (a) is from the training set, (b) is from <strong><i>P3M-500-P</i></strong>, and (c) is from <strong><i>P3M-500-NP</i></strong>. We will publish the whole dataset soon.</p>
 
 <!-- Show some p3m10k traing/ p3m-500-p / p3m-500-np examples here -->
 <!-- ![](demo/face_obfuscation.jpg) -->
 
 <!-- Should we display the benchmark results of trimap-free and trimap-based methods on P3M-10k here?? -->
+
+![](demo/p3m_dataset.png)
 
 
 ## P3M-Net
@@ -67,6 +69,185 @@ Our proposed P3M-Net consists of four parts
 | :----:| :----: | 
 |coming soon|coming soon| 
 
+
+## Benchmark
+
+A systematic evaluation of the existing trimap-based and trimap-free matting methods on P3M-10k is conducted to investigate the impact of the privacy-preserving training (PPT) setting on different matting models and gain some useful insights. Part of the results are shown as below. Please refer to the paper for full tables.
+
+In the following tables, "B" denotes the blurred images, while "N" denotes the normal images. "B:N" denotes training on blurred images while testing on normal images, vice versa.
+
+<table>
+<caption>Table 1. Results of trimap-based deep learning methods on P3M-500-P.</caption>
+    <thead>
+        <tr>
+            <th>Setting</th>
+            <th colspan=2>B:B</th>
+            <th colspan=2>B:N</th>
+            <th colspan=2>N:B</th>
+            <th colspan=2>N:N</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Method</th>
+            <th>SAD</th>
+            <th>MSE</th>
+            <th>SAD</th>
+            <th>MSE</th>
+            <th>SAD</th>
+            <th>MSE</th>
+            <th>SAD</th>
+            <th>MSE</th>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/abs/1703.03872">DIM</a>[41]</td>
+            <td>4.8906</td>
+            <td>0.0115</td>
+            <td>4.8940</td>
+            <td>0.0116</td>
+            <td>4.8050</td>
+            <td>0.0116</td>
+            <td>4.7941</td>
+            <td>0.0116</td>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/abs/1807.10088">AlphaGAN</a>[28]</td>
+            <td>5.2669</td>
+            <td>0.0112</td>
+            <td>5.2367</td>
+            <td>0.0112</td>
+            <td>5.7060</td>
+            <td>0.0120</td>
+            <td>5.6696</td>
+            <td>0.0119</td>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/pdf/2001.04069.pdf">GCA</a>[24]</td>
+            <td>4.3593</td>
+            <td>0.0088</td>
+            <td>4.3469</td>
+            <td>0.0089</td>
+            <td>4.4068</td>
+            <td>0.0089</td>
+            <td>4.4002</td>
+            <td>0.0089</td>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/abs/1908.00672">IndexNet</a>[27]</td>
+            <td>5.1959</td>
+            <td>0.0156</td>
+            <td>5.2188</td>
+            <td>0.0158</td>
+            <td>5.8267</td>
+            <td>0.0202</td>
+            <td>5.8509</td>
+            <td>0.0204</td>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/abs/2003.07711">FBA</a>[12]</td>
+            <td>4.1330</td>
+            <td>0.0088</td>
+            <td>4.1267</td>
+            <td>0.0088</td>
+            <td>4.1666</td>
+            <td>0.0086</td>
+            <td>4.1544</td>
+            <td>0.0086</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+<caption>Table 2. Results of trimap-free methods on P3M-500-P.</caption>
+    <thead>
+        <tr>
+            <th>Setting</th>
+            <th colspan=2>B:B</th>
+            <th colspan=2>B:N</th>
+            <th colspan=2>N:B</th>
+            <th colspan=2>N:N</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Method</th>
+            <th>SAD</th>
+            <th>MSE</th>
+            <th>SAD</th>
+            <th>MSE</th>
+            <th>SAD</th>
+            <th>MSE</th>
+            <th>SAD</th>
+            <th>MSE</th>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/abs/1809.01354">SHM</a>[8]</td>
+            <td>21.56</td>
+            <td>0.0100</td>
+            <td>24.33</td>
+            <td>0.0116</td>
+            <td>23.91</td>
+            <td>0.0115</td>
+            <td>17.13</td>
+            <td>0.0075</td>
+        </tr>
+        <tr>
+            <td><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhang_A_Late_Fusion_CNN_for_Digital_Matting_CVPR_2019_paper.pdf">LF</a>[47]</td>
+            <td>42.95</td>
+            <td>0.0191</td>
+            <td>30.84</td>
+            <td>0.0129</td>
+            <td>41.01</td>
+            <td>0.0174</td>
+            <td>31.22</td>
+            <td>0.0123</td>
+        </tr>
+        <tr>
+            <td><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Qiao_Attention-Guided_Hierarchical_Structure_Aggregation_for_Image_Matting_CVPR_2020_paper.pdf">HATT</a>[30]</td>
+            <td>25.99</td>
+            <td>0.0054</td>
+            <td>26.5</td>
+            <td>0.0055</td>
+            <td>35.02</td>
+            <td>0.0103</td>
+            <td>22.93</td>
+            <td>0.0040</td>
+        </tr>
+        <tr>
+            <td><a href="https://arxiv.org/abs/2010.16188">GFM</a>[22]</td>
+            <td>13.20</td>
+            <td>0.0050</td>
+            <td>13.08</td>
+            <td>0.0050</td>
+            <td>13.54</td>
+            <td>0.0048</td>
+            <td>10.73</td>
+            <td>0.0033</td>
+        </tr>
+        <tr>
+            <td>BASIC</td>
+            <td>15.13</td>
+            <td>0.0058</td>
+            <td>15.52</td>
+            <td>0.0060</td>
+            <td>24.38</td>
+            <td>0.0109</td>
+            <td>14.52</td>
+            <td>0.0054</td>
+        </tr>
+        <tr>
+            <td>P3M-Net(Ours)</td>
+            <td>8.73</td>
+            <td>0.0026</td>
+            <td>9.22</td>
+            <td>0.0028</td>
+            <td>11.22</td>
+            <td>0.0040</td>
+            <td>9.06</td>
+            <td>0.0028</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Results
 
