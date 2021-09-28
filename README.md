@@ -7,19 +7,24 @@
 <!-- </p> -->
 
 
+
 <h4 align="center">This is the official repository of the paper <a href="https://arxiv.org/abs/2104.14222">Privacy-Preserving Portrait Matting</a>.</h4>
+
+
+<h5 align="center"><em>Jizhizi Li<sup>&#8727;</sup>, Sihan Ma<sup>&#8727;</sup>, Jing Zhang, and Dacheng Tao</em></h5>
 
 <p align="center">
   <a href="#introduction">Introduction</a> |
   <a href="#ppt-setting-and-p3m-10k-dataset">PPT and P3M-10k</a> |
   <a href="#p3m-net">P3M-Net</a> |
+  <a href="#benchmark">Benchmark</a> |
   <a href="#results">Results</a> |
   <a href="#statement">Statement</a>
 </p>
 
 ***
 ><h3><strong><i>:postbox: News</i></strong></h3>
-> The training code, the inference code, the pretrained models and the P3M dataset will be released soon. Please stay tuned to this repo for any further updates.
+> The training code, the inference code, the pretrained models and the P3M-10k dataset will be released soon. Please stay tuned to this repo for any further updates.
 > 
 
 ## Introduction
@@ -60,7 +65,7 @@ Our proposed P3M-Net consists of four parts
 
 - <strong>TFI: Tripartite-Feature Integration</strong>: TFI module is used in each matting decoder block to model the interaction between encoder, segmentation decoder, and the matting decoder. TFI has three inputs, the feature map of the previous matting decoder block, the feature map from the same level semantic decoder block, and the feature map from the symmetrical encoder block. TFI passes them through a projection layer, concats the outputs and feeds into a convolutional block to generate the output feature;
 
-- <strong>sBFI: Shallow Bipartite-Feature Integration</strong>: sBFI module is used to model the interaction between the encoder and matting decoder. sBFI adopts the feature map from the first encoder block as a guidance to refine the output feature map from previous matting decoder block since shallow layers in the encoder contain many details and local structural information.
+- <strong>sBFI: Shallow Bipartite-Feature Integration</strong>: sBFI module is used to model the interaction between the encoder and matting decoder. sBFI adopts the feature map from the first encoder block as a guidance to refine the output feature map from previous matting decoder block since shallow layers in the encoder contain many details and local structural information;
 
 - <strong>dBFI: Deep Bipartite-Feature Integration</strong>: dBFI module is used to model the interaction between the encoder and segmentation decoder. dBFI adopts the feature map from the last encoder block as a guidance for the semantic decoder since it contains abundant global semantics. Specifically, dBFI fuses the feature map from the last encoder with the ones from semantic decoder to improve the feature representation ability for the high-level semantic segmentation task.
 
@@ -74,7 +79,7 @@ Our proposed P3M-Net consists of four parts
 
 A systematic evaluation of the existing trimap-based and trimap-free matting methods on P3M-10k is conducted to investigate the impact of the privacy-preserving training (PPT) setting on different matting models and gain some useful insights. Part of the results are shown as below. Please refer to the paper for full tables.
 
-In the following tables, "B" denotes the blurred images, while "N" denotes the normal images. "B:N" denotes training on blurred images while testing on normal images, vice versa.
+In the following tables, "B" denotes the blurred images, and "N" denotes the normal images. "B:N" denotes training on blurred images while testing on normal images, vice versa.
 
 <table>
 <caption>Table 1. Results of trimap-based deep learning methods on P3M-500-P.</caption>
@@ -100,7 +105,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <th>MSE</th>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/abs/1703.03872">DIM</a>[41]</td>
+            <td><a href="https://arxiv.org/abs/1703.03872">DIM</a></td>
             <td>4.8906</td>
             <td>0.0115</td>
             <td>4.8940</td>
@@ -111,7 +116,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0116</td>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/abs/1807.10088">AlphaGAN</a>[28]</td>
+            <td><a href="https://arxiv.org/abs/1807.10088">AlphaGAN</a></td>
             <td>5.2669</td>
             <td>0.0112</td>
             <td>5.2367</td>
@@ -122,7 +127,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0119</td>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/pdf/2001.04069.pdf">GCA</a>[24]</td>
+            <td><a href="https://arxiv.org/pdf/2001.04069.pdf">GCA</a></td>
             <td>4.3593</td>
             <td>0.0088</td>
             <td>4.3469</td>
@@ -133,7 +138,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0089</td>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/abs/1908.00672">IndexNet</a>[27]</td>
+            <td><a href="https://arxiv.org/abs/1908.00672">IndexNet</a></td>
             <td>5.1959</td>
             <td>0.0156</td>
             <td>5.2188</td>
@@ -144,7 +149,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0204</td>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/abs/2003.07711">FBA</a>[12]</td>
+            <td><a href="https://arxiv.org/abs/2003.07711">FBA</a></td>
             <td>4.1330</td>
             <td>0.0088</td>
             <td>4.1267</td>
@@ -181,7 +186,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <th>MSE</th>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/abs/1809.01354">SHM</a>[8]</td>
+            <td><a href="https://arxiv.org/abs/1809.01354">SHM</a></td>
             <td>21.56</td>
             <td>0.0100</td>
             <td>24.33</td>
@@ -192,7 +197,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0075</td>
         </tr>
         <tr>
-            <td><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhang_A_Late_Fusion_CNN_for_Digital_Matting_CVPR_2019_paper.pdf">LF</a>[47]</td>
+            <td><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhang_A_Late_Fusion_CNN_for_Digital_Matting_CVPR_2019_paper.pdf">LF</a></td>
             <td>42.95</td>
             <td>0.0191</td>
             <td>30.84</td>
@@ -203,7 +208,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0123</td>
         </tr>
         <tr>
-            <td><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Qiao_Attention-Guided_Hierarchical_Structure_Aggregation_for_Image_Matting_CVPR_2020_paper.pdf">HATT</a>[30]</td>
+            <td><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Qiao_Attention-Guided_Hierarchical_Structure_Aggregation_for_Image_Matting_CVPR_2020_paper.pdf">HATT</a></td>
             <td>25.99</td>
             <td>0.0054</td>
             <td>26.5</td>
@@ -214,7 +219,7 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0040</td>
         </tr>
         <tr>
-            <td><a href="https://arxiv.org/abs/2010.16188">GFM</a>[22]</td>
+            <td><a href="https://arxiv.org/abs/2010.16188">GFM</a></td>
             <td>13.20</td>
             <td>0.0050</td>
             <td>13.08</td>
@@ -236,15 +241,15 @@ In the following tables, "B" denotes the blurred images, while "N" denotes the n
             <td>0.0054</td>
         </tr>
         <tr>
-            <td>P3M-Net(Ours)</td>
-            <td>8.73</td>
-            <td>0.0026</td>
-            <td>9.22</td>
-            <td>0.0028</td>
-            <td>11.22</td>
-            <td>0.0040</td>
-            <td>9.06</td>
-            <td>0.0028</td>
+            <td>P3M-Net (Ours)</td>
+            <td><strong>8.73</strong></td>
+            <td><strong>0.0026</strong></td>
+            <td><strong>9.22</strong></td>
+            <td><strong>0.0028</strong></td>
+            <td><strong>11.22</strong></td>
+            <td><strong>0.0040</strong></td>
+            <td><strong>9.06</strong></td>
+            <td><strong>0.0028</strong></td>
         </tr>
     </tbody>
 </table>
@@ -269,13 +274,15 @@ If you are interested in our work, please consider citing the following:
 }
 ```
 
-This project is for academic use only. For further questions, please contact [jili8515@uni.sydney.edu.au](mailto:jili8515@uni.sydney.edu.au).
+This project is for academic use only. 
+
+For further questions, please contact <strong><i>Jizhizi Li</i></strong> at [jili8515@uni.sydney.edu.au](mailto:jili8515@uni.sydney.edu.au) or <strong><i>Sihan Ma</i></strong> at sima7436@uni.sydney.edu.au.
 
 
 ## Relevant Projects
 
 [1] <strong>End-to-end Animal Image Matting, arxiv, 2020</strong> | [Paper](https://arxiv.org/pdf/2010.16188v1.pdf) | [Github](https://github.com/JizhiziLi/animal-matting)
-<br><em>Jizhizi Li, Jing Zhang, Stephen J. Maybank, Dacheng Tao</em>
+<br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, Stephen J. Maybank, Dacheng Tao</em>
 
 [2] <strong>Deep Automatic Natural Image Matting, IJCAI, 2021</strong> | [Paper](https://www.ijcai.org/proceedings/2021/0111.pdf) | [Github](https://github.com/JizhiziLi/AIM)
 <br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, and Dacheng Tao</em>
