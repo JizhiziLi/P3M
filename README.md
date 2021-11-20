@@ -1,12 +1,10 @@
-<h1 align="center">Privacy-Preserving Portrait Matting [ACMMM-21]</h1>
+<h1 align="center">Privacy-Preserving Portrait Matting [ACM MM-21]</h1>
 
 <p align="center">
 <a href="https://arxiv.org/abs/2104.14222"><img  src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a>
-<!-- <a href=""><img  src="https://img.shields.io/badge/license-MIT-blue"></a> -->
+<a href=""><img  src="https://img.shields.io/badge/license-MIT-blue"></a>
 <a href="https://dl.acm.org/doi/10.1145/3474085.3475512"><img  src="https://img.shields.io/static/v1?label=inproceedings&message=Paper&color=orange"></a>
 </p>
-
-
 
 <h4 align="center">This is the official repository of the paper <a href="https://arxiv.org/abs/2104.14222">Privacy-Preserving Portrait Matting</a>.</h4>
 
@@ -19,12 +17,18 @@
   <a href="#p3m-net">P3M-Net</a> |
   <a href="#benchmark">Benchmark</a> |
   <a href="#results">Results</a> |
+  <a href="#inference-code-how-to-test-on-your-images">Inference code</a> |
   <a href="#statement">Statement</a>
 </p>
 
+<img src="demo/gif/p_2c2e4470.gif" width="25%"><img src="demo/gif/p_4dfffce8.gif" width="25%"><img src="demo/gif/p_d4fd9815.gif" width="25%"><img src="demo/gif/p_64da52e3.gif" width="25%">
+
+
 ***
 ><h3><strong><i>:postbox: News</i></strong></h3>
-> The training code, the inference code, the pretrained models and the P3M-10k dataset will be released soon. Please stay tuned to this repo for any further updates.
+> The training code and the dataset P3M-10k are coming soon.
+> 
+> [2021-11-20]: Publish the <a href="#inference-code-how-to-test-on-your-images">inference code</a> and the pretrained model ([Google Drive](https://drive.google.com/uc?export=download&id=1Vzbt5NUV-q1KP4M8dDXmzP-3sezYdRSh) | [Baidu Wangpan (pw: jocr)](https://pan.baidu.com/s/1imTTX6Hx6GfyTJuwhQV3_w)) that can be used to test on your own privacy-preserving or normal portrait images.
 > 
 
 ## Introduction
@@ -46,10 +50,6 @@
 
 <p align="justify"><strong>P3M-10k Dataset</strong>: To further explore the effect of PPT setting, we establish the first large-scale privacy-preserving portrait matting benchmark named P3M-10k. It contains 10,000 annonymized high-resolution portrait images by face obfuscation along with high-quality ground truth alpha mattes. Specifically, we carefully collect, filter, and annotate about <strong>10,000</strong> high-resolution images from the Internet with free use license. There are <strong>9,421</strong> images in the training set and <strong>500</strong> images in the test set, denoted as <strong><i>P3M-500-P</i></strong>. In addition, we also collect and annotate another <strong>500</strong> public celebrity images from the Internet without face obfuscation, to evaluate the performance of matting models under the PPT setting on normal portrait images, denoted as <strong><i>P3M-500-NP</i></strong>. We show some examples as below, where (a) is from the training set, (b) is from <strong><i>P3M-500-P</i></strong>, and (c) is from <strong><i>P3M-500-NP</i></strong>. We will publish the whole dataset soon.</p>
 
-<!-- Show some p3m10k traing/ p3m-500-p / p3m-500-np examples here -->
-<!-- ![](demo/face_obfuscation.jpg) -->
-
-<!-- Should we display the benchmark results of trimap-free and trimap-based methods on P3M-10k here?? -->
 
 ![](demo/p3m_dataset.png)
 
@@ -69,10 +69,12 @@ Our proposed P3M-Net consists of four parts
 
 - <strong>dBFI: Deep Bipartite-Feature Integration</strong>: dBFI module is used to model the interaction between the encoder and segmentation decoder. dBFI adopts the feature map from the last encoder block as a guidance for the semantic decoder since it contains abundant global semantics. Specifically, dBFI fuses the feature map from the last encoder with the ones from semantic decoder to improve the feature representation ability for the high-level semantic segmentation task.
 
+Here we provide the model we pretrained on P3M-10k and the backbone we pretrained on ImageNet.
 
-| Pretrained Backbone on ImageNet | Pretrained P3M-NET on P3M-10k | 
-| :----:| :----: | 
-|coming soon|coming soon| 
+| Model|  Pretrained Backbone on ImageNet | Pretrained P3M-NET on P3M-10k | 
+| :----: | :----:| :----: | 
+| Google Drive  | <a href="https://drive.google.com/uc?export=download&id=18Pt-klsbkiyonMdGi6dytExQEjzBnHwY">Link</a>| [Link](https://drive.google.com/uc?export=download&id=1Vzbt5NUV-q1KP4M8dDXmzP-3sezYdRSh) |
+| <p>Baidu Wangpan<br>(百度网盘)</p> | <p><a href="https://pan.baidu.com/s/1vdMQwtu8lnhtLRPjYFG8rA">Link</a><br>(pw: 2v1t)</p>| <p><a href="https://pan.baidu.com/s/1imTTX6Hx6GfyTJuwhQV3_w">Link</a><br>(pw: jocr)</p>|
 
 
 ## Benchmark
@@ -256,14 +258,41 @@ In the following tables, "B" denotes the blurred images, and "N" denotes the nor
 
 ## Results
 
-We test our network on our proposed P3M-500-P and P3M-500-NP and compare with previous SOTA methods, we list the results as below.
+We test our network on our proposed P3M-500-P and P3M-500-NP and compare with previous SOTA methods, we list the results as below. More results on P3M-10k test set can be found [here](https://github.com/JizhiziLi/P3M/tree/master/demo/).
 
 ![](demo/result.jpg)
+
+
+## Inference Code - How to Test on Your Images
+
+Here we provide the procedure of testing on sample images by our pretrained model:
+
+1. Setup environment following this [instruction page](https://github.com/JizhiziLi/P3M/tree/master/core);
+
+2. Insert the path `REPOSITORY_ROOT_PATH` in the file `core/config.py`;
+
+3. Download the pretrained P3M-Net model from here ([Google Drive](https://drive.google.com/uc?export=download&id=1Vzbt5NUV-q1KP4M8dDXmzP-3sezYdRSh)|[Baidu Wangpan (pw: jocr)](https://pan.baidu.com/s/1imTTX6Hx6GfyTJuwhQV3_w)) and unzip to the folder `models/pretrained/`;
+
+4. Save your sample images in folder `samples/original/.`;
+    
+5. Setup parameters in the file `scripts/test_samples.sh` and run by:
+
+    `chmod +x scripts/test_samples.sh`
+
+    `scripts/test_samples.sh`;
+
+6. The results of alpha matte and transparent color image will be saved in folder `samples/result_alpha/.` and `samples/result_color/.`.
+
+We show some sample images, the predicted alpha mattes, and their transparent results as below. We use the pretrained model from section <a href="#p3m-net">Network</a> with `Hybrid (1 & 1/2)` test strategy.
+
+<img src="samples/original/p_015cd10e.jpg" width="33%"><img src="samples/result_alpha/p_015cd10e.png" width="33%"><img src="samples/result_color/p_015cd10e.png" width="33%">
+<img src="samples/original/p_819ea202.jpg" width="33%"><img src="samples/result_alpha/p_819ea202.png" width="33%"><img src="samples/result_color/p_819ea202.png" width="33%">
+<img src="samples/original/p_0865636e.jpg" width="33%"><img src="samples/result_alpha/p_0865636e.png" width="33%"><img src="samples/result_color/p_0865636e.png" width="33%">
+
 
 ## Statement
 
 If you are interested in our work, please consider citing the following:
-
 
 ```
 @inproceedings{10.1145/3474085.3475512,
@@ -284,15 +313,15 @@ series = {MM '21}
 }
 ```
 
-This project is for academic use only. 
+This project is under MIT licence.
 
 For further questions, please contact <strong><i>Jizhizi Li</i></strong> at [jili8515@uni.sydney.edu.au](mailto:jili8515@uni.sydney.edu.au) or <strong><i>Sihan Ma</i></strong> at sima7436@uni.sydney.edu.au.
 
 
 ## Relevant Projects
 
-[1] <strong>Bridging Composite and Real: Towards End-to-end Deep Image Matting, arxiv, 2020</strong> | [Paper](https://arxiv.org/pdf/2010.16188.pdf) | [Github](https://github.com/JizhiziLi/GFM)
-<br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, Stephen J. Maybank, Dacheng Tao</em>
+[1] <strong>Bridging Composite and Real: Towards End-to-end Deep Image Matting, IJCV, 2021 </strong> | [Paper](https://arxiv.org/pdf/2010.16188.pdf) | [Github](https://github.com/JizhiziLi/GFM)
+<br><em>&ensp; &ensp; &ensp;Jizhizi Li<sup>&#8727;</sup>, Jing Zhang<sup>&#8727;</sup>, Stephen J. Maybank, Dacheng Tao</em>
 
 [2] <strong>Deep Automatic Natural Image Matting, IJCAI, 2021</strong> | [Paper](https://www.ijcai.org/proceedings/2021/0111.pdf) | [Github](https://github.com/JizhiziLi/AIM)
 <br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, and Dacheng Tao</em>
