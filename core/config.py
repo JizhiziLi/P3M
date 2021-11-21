@@ -15,7 +15,7 @@ P3M_DATASET_ROOT_PATH = ''
 TRAIN_LOGS_FOLDER = REPOSITORY_ROOT_PATH+'logs/train_logs/'
 TEST_LOGS_FOLDER = REPOSITORY_ROOT_PATH+'logs/test_logs/'
 
-# ######### Paths of datasets
+######### Paths of datasets
 DATASET_PATHS_DICT={
 'P3M10K':{
 	'TRAIN':{
@@ -27,23 +27,22 @@ DATASET_PATHS_DICT={
 		'SAMPLE_NUMBER':9421
 		},
 	'VAL500P':{
-		'ROOT_PATH':P3M_DATASET_ROOT_PATH+'validation1/',
-		'ORIGINAL_PATH':P3M_DATASET_ROOT_PATH+'validation1/blurred_image/',
-		'MASK_PATH':P3M_DATASET_ROOT_PATH+'validation1/mask/',
-		'TRIMAP_PATH':P3M_DATASET_ROOT_PATH+'validation1/trimap/',
+		'ROOT_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-P/',
+		'ORIGINAL_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-P/blurred_image/',
+		'MASK_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-P/mask/',
+		'TRIMAP_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-P/trimap/',
 		'SAMPLE_NUMBER':500
 		},
 	'VAL500NP':{
-		'ROOT_PATH':P3M_DATASET_ROOT_PATH+'validation2/',
-		'ORIGINAL_PATH':P3M_DATASET_ROOT_PATH+'validation2/original_image/',
-		'MASK_PATH':P3M_DATASET_ROOT_PATH+'validation2/mask/',
-		'TRIMAP_PATH':P3M_DATASET_ROOT_PATH+'validation2/trimap/',
+		'ROOT_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-NP/',
+		'ORIGINAL_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-NP/original_image/',
+		'MASK_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-NP/mask/',
+		'TRIMAP_PATH':P3M_DATASET_ROOT_PATH+'P3M-500-NP/trimap/',
 		'SAMPLE_NUMBER':500
 		},
 
 	},
 }
-
 ########## Parameters for training
 CROP_SIZE = [512, 768, 1024]
 RESIZE_SIZE = 512

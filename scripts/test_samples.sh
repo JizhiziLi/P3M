@@ -12,4 +12,3 @@ python core/test.py \
      --dataset_choice=$dataset_choice \
      --model_path=$model_path\
      --test_choice=$test_choice \
-

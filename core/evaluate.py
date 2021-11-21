@@ -147,7 +147,6 @@ def calculate_sad_fgbg(predict, alpha, trimap):
 
 def compute_gradient_whole_image(pd, gt):
 	from scipy.ndimage import gaussian_filter
-
 	pd_x = gaussian_filter(pd, sigma=1.4, order=[1, 0], output=np.float32)
 	pd_y = gaussian_filter(pd, sigma=1.4, order=[0, 1], output=np.float32)
 	gt_x = gaussian_filter(gt, sigma=1.4, order=[1, 0], output=np.float32)

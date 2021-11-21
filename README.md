@@ -4,6 +4,7 @@
 <a href="https://arxiv.org/abs/2104.14222"><img  src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a>
 <a href=""><img  src="https://img.shields.io/badge/license-MIT-blue"></a>
 <a href="https://dl.acm.org/doi/10.1145/3474085.3475512"><img  src="https://img.shields.io/static/v1?label=inproceedings&message=Paper&color=orange"></a>
+<a href="https://paperswithcode.com/sota/image-matting-on-p3m-10k"><img src="https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/privacy-preserving-portrait-matting/image-matting-on-p3m-10k"></a>
 </p>
 
 <h4 align="center">This is the official repository of the paper <a href="https://arxiv.org/abs/2104.14222">Privacy-Preserving Portrait Matting</a>.</h4>
@@ -17,19 +18,24 @@
   <a href="#p3m-net">P3M-Net</a> |
   <a href="#benchmark">Benchmark</a> |
   <a href="#results">Results</a> |
+  <a href="https://github.com/JizhiziLi/P3M/tree/master/core">Train and Test</a> |
   <a href="#inference-code-how-to-test-on-your-images">Inference code</a> |
   <a href="#statement">Statement</a>
 </p>
 
 <img src="demo/gif/p_2c2e4470.gif" width="25%"><img src="demo/gif/p_4dfffce8.gif" width="25%"><img src="demo/gif/p_d4fd9815.gif" width="25%"><img src="demo/gif/p_64da52e3.gif" width="25%">
 
-
 ***
 ><h3><strong><i>:postbox: News</i></strong></h3>
-> The training code and the dataset P3M-10k are coming soon.
-> 
-> [2021-11-20]: Publish the <a href="#inference-code-how-to-test-on-your-images">inference code</a> and the pretrained model ([Google Drive](https://drive.google.com/uc?export=download&id=1Vzbt5NUV-q1KP4M8dDXmzP-3sezYdRSh) | [Baidu Wangpan (pw: jocr)](https://pan.baidu.com/s/1imTTX6Hx6GfyTJuwhQV3_w)) that can be used to test on your own privacy-preserving or normal portrait images.
-> 
+>
+> [2021-11-21]: Publish the dataset [<strong>P3M-10k</strong>](#ppt-setting-and-p3m-10k-dataset) (the <strong>largest</strong> privacy-preserving portrait matting dataset, contains <strong>10421</strong> high-resolution real-world face-blurred portrait images and the manually labeled alpha mattes.), the train code and the test code. The dataset P3M-10k can be accessed from the following link, please make sure that you have read and agreed to the agreement. The train code and test code can be viewed from this [code-base page](https://github.com/JizhiziLi/P3M/tree/master/core). 
+>
+> | Dataset | <p>Dataset Link<br>(Google Drive)</p> | <p>Dataset Link<br>(Baidu Wangpan 百度网盘)</p> | Dataset Release Agreement|
+| :----:| :----: | :----: | :----: | 
+|<strong>P3M-10k</strong>|[Link](https://drive.google.com/uc?export=download&id=1LqUU7BZeiq8I3i5KxApdOJ2haXm-cEv1)|[Link](https://pan.baidu.com/s/1X9OdopT41lK0pKWyj0qSEA) (pw: fgmc)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
+>
+> [2021-11-20]: Publish the <a href="#inference-code-how-to-test-on-your-images">inference code</a> and the pretrained model ([Google Drive](https://drive.google.com/uc?export=download&id=1smX2YQGIpzKbfwDYHAwete00a_YMwoG1) | [Baidu Wangpan (pw: 2308)](https://pan.baidu.com/s/1zGF3qnnD8qpI-Z5Nz0TDGA)) that can be used to test on your own privacy-preserving or normal portrait images. Some test results on P3M-10k can be viewed from this [demo page](https://github.com/JizhiziLi/P3M/tree/master/demo).
+
 
 ## Introduction
 
@@ -41,23 +47,26 @@
 <p align="justify">To devise a better trimap-free portrait matting model, we propose <a href="#p3m-net"><strong>P3M-Net</strong></a>, which leverages the power of a unified framework for both semantic perception and detail matting, and specifically emphasizes the interaction between them and the encoder to facilitate the matting process. Extensive experiments on P3M-10k demonstrate that P3M-Net outperforms the state-of-the-art methods in terms of both objective metrics and subjective visual quality. Besides, it shows good generalization capacity under the PPT setting, confirming the value of P3M-10k for facilitating future research and enabling potential real-world applications.</p>
 
 
-
 ## PPT Setting and P3M-10k Dataset
 
 
 <p align="justify"><strong>PPT Setting</strong>: Due to the privacy concern, we propose the <strong>P</strong>rivacy-<strong>P</strong>reserving <strong>T</strong>raining (<strong>PPT</strong>) setting in portrait matting, 𝑖.𝑒., training on privacy-preserved images (𝑒.𝑔., processed by face obfuscation) and testing on arbitraty images with or without privacy content. As an initial step towards privacy-preserving portrait matting problem, we only define the <i>identifiable faces</i> in frontal and some profile portrait images as the private content in this work. </p>
 
 
-<p align="justify"><strong>P3M-10k Dataset</strong>: To further explore the effect of PPT setting, we establish the first large-scale privacy-preserving portrait matting benchmark named P3M-10k. It contains 10,000 annonymized high-resolution portrait images by face obfuscation along with high-quality ground truth alpha mattes. Specifically, we carefully collect, filter, and annotate about <strong>10,000</strong> high-resolution images from the Internet with free use license. There are <strong>9,421</strong> images in the training set and <strong>500</strong> images in the test set, denoted as <strong><i>P3M-500-P</i></strong>. In addition, we also collect and annotate another <strong>500</strong> public celebrity images from the Internet without face obfuscation, to evaluate the performance of matting models under the PPT setting on normal portrait images, denoted as <strong><i>P3M-500-NP</i></strong>. We show some examples as below, where (a) is from the training set, (b) is from <strong><i>P3M-500-P</i></strong>, and (c) is from <strong><i>P3M-500-NP</i></strong>. We will publish the whole dataset soon.</p>
+<p align="justify"><strong>P3M-10k Dataset</strong>: To further explore the effect of PPT setting, we establish the first large-scale privacy-preserving portrait matting benchmark named P3M-10k. It contains 10,000 annonymized high-resolution portrait images by face obfuscation along with high-quality ground truth alpha mattes. Specifically, we carefully collect, filter, and annotate about <strong>10,000</strong> high-resolution images from the Internet with free use license. There are <strong>9,421</strong> images in the training set and <strong>500</strong> images in the test set, denoted as <strong><i>P3M-500-P</i></strong>. In addition, we also collect and annotate another <strong>500</strong> public celebrity images from the Internet without face obfuscation, to evaluate the performance of matting models under the PPT setting on normal portrait images, denoted as <strong><i>P3M-500-NP</i></strong>. We show some examples as below, where (a) is from the training set, (b) is from <strong><i>P3M-500-P</i></strong>, and (c) is from <strong><i>P3M-500-NP</i></strong>.</p>
 
+
+P3M-10k is now <strong>published</strong>!! You can get access to it from the following links, please make sure that you have read and agreed to the agreement. 
+
+ | Dataset | <p>Dataset Link<br>(Google Drive)</p> | <p>Dataset Link<br>(Baidu Wangpan 百度网盘)</p> | Dataset Release Agreement|
+| :----:| :----: | :----: | :----: | 
+|<strong>P3M-10k</strong>|[Link](https://drive.google.com/uc?export=download&id=1LqUU7BZeiq8I3i5KxApdOJ2haXm-cEv1)|[Link](https://pan.baidu.com/s/1X9OdopT41lK0pKWyj0qSEA) (pw: fgmc)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
 
 ![](demo/p3m_dataset.png)
-
 
 ## P3M-Net
 
 ![](demo/network.png)
-
 
 Our proposed P3M-Net consists of four parts
 
@@ -73,8 +82,8 @@ Here we provide the model we pretrained on P3M-10k and the backbone we pretraine
 
 | Model|  Pretrained Backbone on ImageNet | Pretrained P3M-NET on P3M-10k | 
 | :----: | :----:| :----: | 
-| Google Drive  | <a href="https://drive.google.com/uc?export=download&id=18Pt-klsbkiyonMdGi6dytExQEjzBnHwY">Link</a>| [Link](https://drive.google.com/uc?export=download&id=1Vzbt5NUV-q1KP4M8dDXmzP-3sezYdRSh) |
-| <p>Baidu Wangpan<br>(百度网盘)</p> | <p><a href="https://pan.baidu.com/s/1vdMQwtu8lnhtLRPjYFG8rA">Link</a><br>(pw: 2v1t)</p>| <p><a href="https://pan.baidu.com/s/1imTTX6Hx6GfyTJuwhQV3_w">Link</a><br>(pw: jocr)</p>|
+| Google Drive  | <a href="https://drive.google.com/uc?export=download&id=18Pt-klsbkiyonMdGi6dytExQEjzBnHwY">Link</a>| [Link](https://drive.google.com/uc?export=download&id=1smX2YQGIpzKbfwDYHAwete00a_YMwoG1) |
+| <p>Baidu Wangpan<br>(百度网盘)</p> | <p><a href="https://pan.baidu.com/s/1vdMQwtu8lnhtLRPjYFG8rA">Link</a><br>(pw: 2v1t)</p>| <p><a href="https://pan.baidu.com/s/1zGF3qnnD8qpI-Z5Nz0TDGA">Link</a><br>(pw: 2308)</p>|
 
 
 ## Benchmark
@@ -271,7 +280,7 @@ Here we provide the procedure of testing on sample images by our pretrained mode
 
 2. Insert the path `REPOSITORY_ROOT_PATH` in the file `core/config.py`;
 
-3. Download the pretrained P3M-Net model from here ([Google Drive](https://drive.google.com/uc?export=download&id=1Vzbt5NUV-q1KP4M8dDXmzP-3sezYdRSh)|[Baidu Wangpan (pw: jocr)](https://pan.baidu.com/s/1imTTX6Hx6GfyTJuwhQV3_w)) and unzip to the folder `models/pretrained/`;
+3. Download the pretrained P3M-Net model from here ([Google Drive](https://drive.google.com/uc?export=download&id=1smX2YQGIpzKbfwDYHAwete00a_YMwoG1)|[Baidu Wangpan (pw: 2308)](https://pan.baidu.com/s/1zGF3qnnD8qpI-Z5Nz0TDGA)) and unzip to the folder `models/pretrained/`;
 
 4. Save your sample images in folder `samples/original/.`;
     
