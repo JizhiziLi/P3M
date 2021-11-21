@@ -19,7 +19,7 @@
   <a href="#benchmark">Benchmark</a> |
   <a href="#results">Results</a> |
   <a href="https://github.com/JizhiziLi/P3M/tree/master/core">Train and Test</a> |
-  <a href="#inference-code-how-to-test-on-your-images">Inference code</a> |
+  <a href="##inference-code---how-to-test-on-your-images">Inference code</a> |
   <a href="#statement">Statement</a>
 </p>
 
@@ -32,9 +32,9 @@
 >
 > | Dataset | <p>Dataset Link<br>(Google Drive)</p> | <p>Dataset Link<br>(Baidu Wangpan 百度网盘)</p> | Dataset Release Agreement|
 | :----:| :----: | :----: | :----: | 
-|<strong>P3M-10k</strong>|[Link](https://drive.google.com/uc?export=download&id=1LqUU7BZeiq8I3i5KxApdOJ2haXm-cEv1)|[Link](https://pan.baidu.com/s/1X9OdopT41lK0pKWyj0qSEA) (pw: fgmc)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
+|P3M-10k|[Link](https://drive.google.com/uc?export=download&id=1LqUU7BZeiq8I3i5KxApdOJ2haXm-cEv1)|[Link](https://pan.baidu.com/s/1X9OdopT41lK0pKWyj0qSEA) (pw: fgmc)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
 >
-> [2021-11-20]: Publish the <a href="#inference-code-how-to-test-on-your-images">inference code</a> and the pretrained model ([Google Drive](https://drive.google.com/uc?export=download&id=1smX2YQGIpzKbfwDYHAwete00a_YMwoG1) | [Baidu Wangpan (pw: 2308)](https://pan.baidu.com/s/1zGF3qnnD8qpI-Z5Nz0TDGA)) that can be used to test on your own privacy-preserving or normal portrait images. Some test results on P3M-10k can be viewed from this [demo page](https://github.com/JizhiziLi/P3M/tree/master/demo).
+> [2021-11-20]: Publish the <a href="#inference-code---how-to-test-on-your-images">inference code</a> and the pretrained model ([Google Drive](https://drive.google.com/uc?export=download&id=1smX2YQGIpzKbfwDYHAwete00a_YMwoG1) | [Baidu Wangpan (pw: 2308)](https://pan.baidu.com/s/1zGF3qnnD8qpI-Z5Nz0TDGA)) that can be used to test on your own privacy-preserving or normal portrait images. Some test results on P3M-10k can be viewed from this [demo page](https://github.com/JizhiziLi/P3M/tree/master/demo).
 
 
 ## Introduction
@@ -58,7 +58,7 @@
 
 P3M-10k is now <strong>published</strong>!! You can get access to it from the following links, please make sure that you have read and agreed to the agreement. 
 
- | Dataset | <p>Dataset Link<br>(Google Drive)</p> | <p>Dataset Link<br>(Baidu Wangpan 百度网盘)</p> | Dataset Release Agreement|
+| Dataset | <p>Dataset Link<br>(Google Drive)</p> | <p>Dataset Link<br>(Baidu Wangpan 百度网盘)</p> | Dataset Release Agreement|
 | :----:| :----: | :----: | :----: | 
 |<strong>P3M-10k</strong>|[Link](https://drive.google.com/uc?export=download&id=1LqUU7BZeiq8I3i5KxApdOJ2haXm-cEv1)|[Link](https://pan.baidu.com/s/1X9OdopT41lK0pKWyj0qSEA) (pw: fgmc)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
 
