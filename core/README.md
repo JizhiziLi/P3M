@@ -43,8 +43,9 @@ Our code has been tested with Python 3.7.7, Pytorch 1.7.1, Torchvision 0.8.2, CU
 | Dataset | <p>Dataset Link<br>(Google Drive)</p> | <p>Dataset Link<br>(Baidu Wangpan 百度网盘)</p> | Dataset Release Agreement|
 | :----:| :----: | :----: | :----: | 
 |<strong>P3M-10k</strong>|[Link](https://drive.google.com/uc?export=download&id=1LqUU7BZeiq8I3i5KxApdOJ2haXm-cEv1)|[Link](https://pan.baidu.com/s/1X9OdopT41lK0pKWyj0qSEA) (pw: fgmc)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
+|<strong>P3M-10k facemask</strong> (optional)|[Link](https://drive.google.com/file/d/1I-71PbkWcivBv3ly60V0zvtYRd3ddyYs/view?usp=sharing)|[Link](https://pan.baidu.com/s/1D9Kj_OIJbFTsqWfbMPzh_g) (pw: f772)|[Agreement (MIT License)](https://jizhizili.github.io/files/p3m_dataset_agreement/P3M-10k_Dataset_Release_Agreement.pdf)| 
 
-1. Download the datasets P3M-10k from the above links and unzip to the folders `P3M_DATASET_ROOT_PATH`, set up the configuratures in the file `core/config.py`. Please make sure that you have checked out and agreed to the agreements.
+1. Download the datasets P3M-10k from the above links and unzip to the folders `P3M_DATASET_ROOT_PATH`, set up the configuratures in the file `core/config.py`. Please make sure that you have checked out and agreed to the agreements. Note that the facemask is not used in our work. So it's optional to download it.
 
 2. You will need to generate the foregrounds and backgrounds following closed form method as in the paper `Levin, Anat, Dani Lischinski, and Yair Weiss. "A closed-form solution to natural image matting." IEEE transactions on pattern analysis and machine intelligence, 2007` first. Some reference implementations can be referred to [here (python)](https://github.com/MarcoForte/closed-form-matting/blob/master/closed_form_matting/solve_foreground_background.py) and [here (matlab)](http://people.csail.mit.edu/alevin/matting.tar.gz). Inser the results in the folder `DATASET_PATHS_DICT['P3M10K']['TRAIN']['FG_PATH']` and `DATASET_PATHS_DICT['P3M10K']['TRAIN']['BG_PATH']`.
 
