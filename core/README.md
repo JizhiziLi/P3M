@@ -82,7 +82,7 @@ Here we provide the procedure of training on P3M-10k:
 
 1. Setup the environment following this [section](#installation);
 
-2. Setup required parameters in `core/config.py`;
+2. Setup required parameters in `core/config.py`, e.g., download the pretrained backbone on Imagenet from the above link and move to the folder `PRETRAINED_R34_MP`;
 
 3.  (1) To train with closed_form foregrounds and backgrounds of AM-2k (the same way as in our paper), run the code:
     
