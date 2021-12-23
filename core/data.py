@@ -37,7 +37,7 @@ class MattingTransform(object):
 		crop_size = CROP_SIZE[rand_ind] if CROP_SIZE[rand_ind]<min(h, w) else 512
 		resize_size = RESIZE_SIZE
 		### generate crop centered in transition area randomly
-		trimap = argv[1]
+		trimap = argv[4]
 		trimap_crop = trimap[:h-crop_size, :w-crop_size]
 		target = np.where(trimap_crop == 128) if random.random() < 0.5 else np.where(trimap_crop > -100)
 		if len(target[0])==0:
@@ -92,10 +92,15 @@ class MattingDataset(torch.utils.data.Dataset):
 			argv_transform.append(item)
 
 		[ori, mask, fg, bg, trimap] = argv_transform
-		ori = ori/255.0
+		
 		normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
+		ori = ori/255.0
 		ori = normalize(ori)
+		fg = fg/255.0
+		fg = normalize(fg)
+		bg = bg/255.0
+		bg = normalize(bg)
 		return ori, mask, fg, bg, trimap
 
 	def __len__(self):
