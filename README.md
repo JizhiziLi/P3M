@@ -19,7 +19,7 @@
   <a href="#benchmark">Benchmark</a> |
   <a href="#results">Results</a> |
   <a href="https://github.com/JizhiziLi/P3M/tree/master/core">Train and Test</a> |
-  <a href="##inference-code---how-to-test-on-your-images">Inference code</a> |
+  <a href="#inference-code---how-to-test-on-your-images">Inference code</a> |
   <a href="#statement">Statement</a>
 </p>
 
@@ -27,6 +27,8 @@
 
 ***
 ><h3><strong><i>:postbox: News</i></strong></h3>
+>
+> [2022-03-31]: Publish the extended version paper "Rethinking Portrait Matting with Privacy Preserving". The code, dataset, and models are available at [Github](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting).
 >
 > [2021-11-21]: Publish the dataset [<strong>P3M-10k</strong>](#ppt-setting-and-p3m-10k-dataset) (the <strong>largest</strong> privacy-preserving portrait matting dataset, contains <strong>10421</strong> high-resolution real-world face-blurred portrait images and the manually labeled alpha mattes.), the train code and the test code. The dataset P3M-10k can be accessed from the following link, please make sure that you have read and agreed to the agreement. The train code and test code can be viewed from this [code-base page](https://github.com/JizhiziLi/P3M/tree/master/core). 
 > 
@@ -333,8 +335,10 @@ For further questions, please contact <strong><i>Jizhizi Li</i></strong> at [jil
 
 ## Relevant Projects
 
-[1] <strong>Bridging Composite and Real: Towards End-to-end Deep Image Matting, IJCV, 2021 </strong> | [Paper](https://arxiv.org/pdf/2010.16188.pdf) | [Github](https://github.com/JizhiziLi/GFM)
+[1] <strong>Rethinkig Portrait Matting with Privacy Preserving, 2022</strong> | [Paper]() | [Github](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting)
+
+[2] <strong>Bridging Composite and Real: Towards End-to-end Deep Image Matting, IJCV, 2022 </strong> | [Paper](https://arxiv.org/pdf/2010.16188.pdf) | [Github](https://github.com/JizhiziLi/GFM)
 <br><em>&ensp; &ensp; &ensp;Jizhizi Li<sup>&#8727;</sup>, Jing Zhang<sup>&#8727;</sup>, Stephen J. Maybank, Dacheng Tao</em>
 
-[2] <strong>Deep Automatic Natural Image Matting, IJCAI, 2021</strong> | [Paper](https://www.ijcai.org/proceedings/2021/0111.pdf) | [Github](https://github.com/JizhiziLi/AIM)
+[3] <strong>Deep Automatic Natural Image Matting, IJCAI, 2021</strong> | [Paper](https://www.ijcai.org/proceedings/2021/0111.pdf) | [Github](https://github.com/JizhiziLi/AIM)
 <br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, and Dacheng Tao</em>
