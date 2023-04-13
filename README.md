@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://arxiv.org/abs/2104.14222"><img  src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a>
-<a href=""><img  src="https://img.shields.io/badge/license-MIT-blue"></a>
+<a href="https://opensource.org/licenses/MIT"><img  src="https://img.shields.io/badge/license-MIT-blue"></a>
 <a href="https://dl.acm.org/doi/10.1145/3474085.3475512"><img  src="https://img.shields.io/static/v1?label=inproceedings&message=Paper&color=orange"></a>
 <a href="https://paperswithcode.com/sota/image-matting-on-p3m-10k"><img src="https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/privacy-preserving-portrait-matting/image-matting-on-p3m-10k"></a>
 </p>
@@ -27,8 +27,9 @@
 
 ***
 ><h3><strong><i>:postbox: News</i></strong></h3>
+> [2023-03-28]: The extended paper [Rethinking Portrait Matting with Privacy Preserving](https://github.com/ViTAE-Transformer/p3m-net) has been accepted by the International Journal of Computer Vision ([IJCV](https://www.springer.com/journal/11263)).
 >
-> [2022-03-31]: Publish the extended version paper "Rethinking Portrait Matting with Privacy Preserving". The code, dataset, and models are available at [Github](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting).
+> [2022-03-31]: Publish the extended version paper "Rethinking Portrait Matting with Privacy Preserving". The code, dataset, and models are available at [Github](https://github.com/ViTAE-Transformer/p3m-net).
 >
 > [2021-11-21]: Publish the dataset [<strong>P3M-10k</strong>](#ppt-setting-and-p3m-10k-dataset) (the <strong>largest</strong> privacy-preserving portrait matting dataset, contains <strong>10421</strong> high-resolution real-world face-blurred portrait images and the manually labeled alpha mattes.), the train code and the test code. The dataset P3M-10k can be accessed from the following link, please make sure that you have read and agreed to the agreement. The train code and test code can be viewed from this [code-base page](https://github.com/JizhiziLi/P3M/tree/master/core). 
 > 
@@ -335,11 +336,24 @@ For further questions, please contact <strong><i>Jizhizi Li</i></strong> at [jil
 
 ## Relevant Projects
 
-[1] <strong>Rethinking Portrait Matting with Pirvacy Preserving, arXiv, 2022</strong> | [Paper](https://arxiv.org/abs/2203.16828) | [Github](https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting)
-<br><em>&ensp; &ensp; &ensp;Sihan Ma<sup>&#8727;</sup>, Jizhizi Li<sup>&#8727;</sup>, Jing Zhang, He Zhang, and Dacheng Tao</em>
+<a href="https://github.com/ViTAE-Transformer/ViTAE-Transformer-Matting"><img  src="https://shields.io/badge/-A_list_of_our_works_in_matting-9cf?style=for-the-badge"></a>
+</p>
+
+
+[1] <strong>Deep Automatic Natural Image Matting, IJCAI, 2021</strong> | [Paper](https://www.ijcai.org/proceedings/2021/0111.pdf) | [Github](https://github.com/JizhiziLi/AIM)
+<br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, and Dacheng Tao</em>
+
 
 [2] <strong>Bridging Composite and Real: Towards End-to-end Deep Image Matting, IJCV, 2022 </strong> | [Paper](https://link.springer.com/article/10.1007/s11263-021-01541-0) | [Github](https://github.com/JizhiziLi/GFM)
 <br><em>&ensp; &ensp; &ensp;Jizhizi Li<sup>&#8727;</sup>, Jing Zhang<sup>&#8727;</sup>, Stephen J. Maybank, Dacheng Tao</em>
 
-[3] <strong>Deep Automatic Natural Image Matting, IJCAI, 2021</strong> | [Paper](https://www.ijcai.org/proceedings/2021/0111) | [Github](https://github.com/JizhiziLi/AIM)
+
+[3] <strong>Referring Image Matting, CVPR, 2023</strong> | [Paper](https://arxiv.org/pdf/2206.05149.pdf) | [Github](https://github.com/JizhiziLi/RIM)
+<br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, and Dacheng Tao</em>
+
+
+[4] <strong>Rethinking Portrait Matting with Privacy Preserving, IJCV, 2023</strong> | [Paper](https://arxiv.org/pdf/2203.16828.pdf) | [Github](https://github.com/ViTAE-Transformer/P3M-Net)
+<br><em>&ensp; &ensp; &ensp;Sihan Ma<sup>&#8727;</sup>, Jizhizi Li<sup>&#8727;</sup>, Jing Zhang, He Zhang, Dacheng Tao</em>
+
+[5] <strong>Deep Image Matting: A Comprehensive Survey, ArXiv, 2023</strong> | [Paper](https://arxiv.org/abs/2304.04672) | [Github](https://github.com/jizhiziLi/matting-survey)
 <br><em>&ensp; &ensp; &ensp;Jizhizi Li, Jing Zhang, and Dacheng Tao</em>
