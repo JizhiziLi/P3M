@@ -27,6 +27,7 @@
 
 ***
 ><h3><strong><i>:postbox: News</i></strong></h3>
+>
 > [2023-03-28]: The extended paper [Rethinking Portrait Matting with Privacy Preserving](https://github.com/ViTAE-Transformer/p3m-net) has been accepted by the International Journal of Computer Vision ([IJCV](https://www.springer.com/journal/11263)).
 >
 > [2022-03-31]: Publish the extended version paper "Rethinking Portrait Matting with Privacy Preserving". The code, dataset, and models are available at [Github](https://github.com/ViTAE-Transformer/p3m-net).
